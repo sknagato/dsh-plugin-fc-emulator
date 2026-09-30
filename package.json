@@ -1,0 +1,56 @@
+{
+  "name": "dsh-plugin-fc-emulator",
+  "version": "1.0.0",
+  "description": "FC（红白机/NES）游戏模拟器插件 - 悬浮球游戏厅 + fceumm (libretro) 核心（589 芯片，wasm），适配 DeepSeek Harness (DSH) Web 宿主",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "core-fce",
+    "roms",
+    "cordis.patch.yml",
+    "README.md",
+    "THIRD_PARTY.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sknagato/dsh-plugin-fc-emulator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sknagato/dsh-plugin-fc-emulator/issues"
+  },
+  "homepage": "https://github.com/sknagato/dsh-plugin-fc-emulator#readme",
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "fc",
+    "nes",
+    "famicom",
+    "emulator",
+    "fceumm",
+    "libretro",
+    "wasm",
+    "retro"
+  ],
+  "author": "sknagato",
+  "license": "MIT AND GPL-2.0-only"
+}

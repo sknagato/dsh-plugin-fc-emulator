@@ -1,0 +1,14 @@
+# Node / 构建产物
+node_modules/
+dist/
+*.log
+
+# 本地数据（ROM / 存档 / SRAM 都在 $DSH_HOME/data 下，不进仓库）
+roms/*.nes
+!roms/.gitkeep
+
+# 编辑器 / 系统
+.DS_Store
+*.swp
+.idea/
+.vscode/

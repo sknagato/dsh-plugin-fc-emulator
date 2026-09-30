@@ -1,0 +1,16 @@
+diff --git a/src/drivers/libretro/libretro.c b/src/drivers/libretro/libretro.c
+index 3485976..e81e600 100644
+--- a/src/drivers/libretro/libretro.c
++++ b/src/drivers/libretro/libretro.c
+@@ -3967,6 +3967,11 @@ bool retro_load_game(const struct retro_game_info *info)
+ 
+       strlcpy(content_path, info->path,
+             sizeof(content_path));
++      /* 上游 bug 修复：经典 retro_game_info 路径漏掉 ROM 缓冲传递，
++       * 不支持 GET_GAME_INFO_EXT 的前端拿到 content_data=NULL，
++       * 核心会去磁盘打开 path 而失败。此处补上。 */
++      content_data = (const uint8_t *)info->data;
++      content_size = info->size;
+    }
+ 
+ #ifdef HAVE_HDPACK

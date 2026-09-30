@@ -1,0 +1,11 @@
+# dsh-plugin-fc-emulator — profile bundle patch
+#
+# 把 FC 游戏厅插件插入 profile 的插件树。
+# 通过 `dsh plugin --profile web add <本包>`（npm / GitHub URL）安装后，
+# 本 patch 层随包自动生效，无需手动编辑 cordis.patch.yml。
+#
+# name 用裸包名（= package.json 的 name）：DSH 将其作为已安装的 npm 包导入，
+# 解析到该包的 main 出口（index.js）。
+- insert:
+    - id: dsh-plugin-fc-emulator
+      name: dsh-plugin-fc-emulator
